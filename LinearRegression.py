@@ -25,7 +25,7 @@ def gradient_runner(starting_m,starting_b,iterations,learning_rate,data):
 	m = starting_m
 	b = starting_b
 	for i in range(iterations):
-		m,b = step_gradient(m,b,learning_rate,array[data])
+		m,b = step_gradient(m,b,learning_rate,array(data))
 	return [m,b]
 
 
@@ -39,5 +39,15 @@ def program():
 	print("Your ML program is Running....")
 	m,b = gradient_runner(initial_m,initial_b,iterations,learning_rate,data)
 	print("After %d iterations, the m = %d and the b = %d and the error value is %d"%(iterations,m,b,find_error(m,b,data)))
+	X = []
+	Y = []
+	for i in range(len(data)):
+		X.append(data[i,0])
+		Y.append(data[i,1])
+	X = array(X)
+	Y = array(Y)
+	plt.scatter(X, Y)
+	plt.plot(X, (m*X+b), color='red')
+	plt.show()
  
 program()
