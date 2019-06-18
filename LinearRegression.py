@@ -1,4 +1,5 @@
 from numpy import *
+from matplotlib import pyplot as plt
 
 def find_error(m,b,data):
 	total_error = 0
