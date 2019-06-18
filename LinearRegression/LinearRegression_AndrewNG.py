@@ -17,7 +17,7 @@ def gradient_descent(starting_m,starting_b,learning_rate,points):
 		x = points[i,0]
 		y = points[i,1]
 		m_gradient += ((1/N) * x * (starting_m * x + starting_b - y))
-		m_gradient += ((1/N)  * (starting_m * x + starting_b - y))
+		b_gradient += ((1/N)  * (starting_m * x + starting_b - y))
 	new_m = starting_m - (learning_rate*m_gradient)
 	new_b = starting_b - (learning_rate*b_gradient)
 	return [new_m,new_b]
